@@ -56,14 +56,6 @@ fun FilmCard(movie: Movie, navController: NavHostController) {
                             CircularProgressIndicator()
                         }
                     },
-                    error = {
-                        Image(
-                            painter = painterResource(id = R.drawable.test_image),
-                            contentScale = ContentScale.FillWidth,
-                            modifier = Modifier.height(220.dp),
-                            contentDescription = ""
-                        )
-                    },
                     contentDescription = null,
                 )
                 Text(

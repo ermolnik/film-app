@@ -15,7 +15,9 @@ object RetrofitClient {
         .build()
 
     private fun okHttpClient() =
-        OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().apply {
+        OkHttpClient.Builder()
+            .addInterceptor(ApiKeyInterceptor())
+            .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }).build()
 

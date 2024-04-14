@@ -29,7 +29,7 @@ class MoviesLocalDataSource @Inject constructor(
         val pagingSourceFactory = { moviesDao.getMoviesPaging() }
         val paging = Pager(
             config = PagingConfig(
-                pageSize = 10,
+                pageSize = 3,
             ),
             pagingSourceFactory = pagingSourceFactory,
             remoteMediator = MoviesRemoteMediator(

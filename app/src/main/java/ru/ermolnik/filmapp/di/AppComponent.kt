@@ -5,16 +5,15 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.ermolnik.filmapp.MainActivity
 
-@Component(modules = [DataModule::class, DomainModule::class, PresentationModule::class])
+@Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
 internal interface AppComponent {
     fun inject(mainActivity: MainActivity)
 
-    @Component.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun context(context: Context): Builder
-
-        fun build(): AppComponent
+    @Component.Factory
+    interface Factory {
+        fun create(
+            @BindsInstance
+            context: Context
+        ): AppComponent
     }
 }

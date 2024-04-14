@@ -37,6 +37,7 @@ internal fun Navigation(
                 )
                 DetailsScreen(
                     detailsViewModel,
+                    navController
                 )
             }
         }

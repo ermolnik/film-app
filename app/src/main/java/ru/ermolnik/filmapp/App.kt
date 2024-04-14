@@ -11,7 +11,9 @@ internal class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder().context(this).build()
+        appComponent = DaggerAppComponent
+            .factory()
+            .create(this)
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
