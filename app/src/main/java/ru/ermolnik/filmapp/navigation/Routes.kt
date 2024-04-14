@@ -1,4 +1,4 @@
-package ru.ermolnik.filmapp.ui.navigation
+package ru.ermolnik.filmapp.navigation
 
 
 sealed class Routes(val routes: String) {

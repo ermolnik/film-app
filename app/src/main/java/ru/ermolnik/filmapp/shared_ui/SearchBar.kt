@@ -1,4 +1,4 @@
-package ru.ermolnik.filmapp.ui.list.components
+package ru.ermolnik.filmapp.shared_ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image

@@ -5,7 +5,7 @@ import ru.ermolnik.filmapp.di.AppComponent
 import ru.ermolnik.filmapp.di.DaggerAppComponent
 import timber.log.Timber
 
-class App : Application() {
+internal class App : Application() {
 
     lateinit var appComponent: AppComponent
 

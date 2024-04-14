@@ -1,4 +1,4 @@
-package ru.ermolnik.filmapp.ui.navigation
+package ru.ermolnik.filmapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -14,7 +14,7 @@ import ru.ermolnik.filmapp.ui.list.MainScreenViewModel
 import ru.ermolnik.filmapp.ui.list.MainViewModelFactory
 
 @Composable
-fun Navigation(
+internal fun Navigation(
     navController: NavHostController,
     mainViewModelFactory: MainViewModelFactory,
     detailsViewModelAssistedFactory: DetailsViewModelAssistedFactory

@@ -10,7 +10,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,15 +22,15 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import ru.ermolnik.filmapp.ui.list.components.FilmCard
-import ru.ermolnik.filmapp.ui.list.components.SearchBar
+import ru.ermolnik.filmapp.shared_ui.FilmCard
+import ru.ermolnik.filmapp.shared_ui.SearchBar
 import ru.ermolnik.filmapp.domain.model.Movie
-import ru.ermolnik.filmapp.ui.main_components.CategoriesItem
+import ru.ermolnik.filmapp.shared_ui.CategoriesItem
 import timber.log.Timber
 
 @SuppressLint("StateFlowValueCalledInComposition")
 @Composable
-fun MainScreen(navController: NavHostController, mainScreenViewModel: MainScreenViewModel) {
+internal fun MainScreen(navController: NavHostController, mainScreenViewModel: MainScreenViewModel) {
     val films = mainScreenViewModel.movie.collectAsState()
     val category = remember { mutableStateOf("Popular now") }
     val templateSearchValue = remember { mutableStateOf("") }

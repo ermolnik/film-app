@@ -4,12 +4,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalConfiguration
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,8 +14,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,28 +23,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
-import androidx.paging.LoadState
-import androidx.paging.compose.LazyPagingItems
-import androidx.paging.compose.collectAsLazyPagingItems
-import androidx.paging.compose.itemContentType
-import androidx.paging.compose.itemKey
 import coil.compose.AsyncImage
 import coil.compose.SubcomposeAsyncImage
 import ru.ermolnik.filmapp.R
 import ru.ermolnik.filmapp.domain.model.Actor
-import ru.ermolnik.filmapp.ui.list.components.FilmCard
-import ru.ermolnik.filmapp.ui.list.components.SearchBar
-import ru.ermolnik.filmapp.domain.model.Movie
-import ru.ermolnik.filmapp.ui.main_components.AgeBar
-import ru.ermolnik.filmapp.ui.main_components.CategoriesItem
-import ru.ermolnik.filmapp.ui.main_components.CustomRatingView
-import timber.log.Timber
-
+import ru.ermolnik.filmapp.shared_ui.AgeBar
+import ru.ermolnik.filmapp.shared_ui.CategoriesItem
+import ru.ermolnik.filmapp.shared_ui.CustomRatingView
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailsScreen(
+internal fun DetailsScreen(
     detailsScreenViewModel: DetailsViewModel,
 ) {
 

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dagger.assisted.AssistedFactory
 
-class DetailsViewModelFactory(
+internal class DetailsViewModelFactory(
     private val detailsViewModelAssistedFactory: DetailsViewModelAssistedFactory,
     private val movieId: Int,
 ) : ViewModelProvider.Factory {
@@ -14,6 +14,6 @@ class DetailsViewModelFactory(
 }
 
 @AssistedFactory
-interface DetailsViewModelAssistedFactory {
+internal interface DetailsViewModelAssistedFactory {
     fun create(movieId: Int): DetailsViewModel
 }

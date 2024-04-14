@@ -1,7 +1,5 @@
-package ru.ermolnik.filmapp.ui.main_components
+package ru.ermolnik.filmapp.shared_ui
 
-import android.graphics.drawable.VectorDrawable
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
@@ -18,7 +16,6 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.imageResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ru.ermolnik.filmapp.R

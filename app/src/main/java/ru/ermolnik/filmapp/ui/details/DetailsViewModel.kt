@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import ru.ermolnik.filmapp.utils.doOnError
 import ru.ermolnik.filmapp.utils.doOnSuccess
 
-class DetailsViewModel @AssistedInject constructor(
+internal class DetailsViewModel @AssistedInject constructor(
     private val getMovieDetailsUseCase: GetMovieDetailsUseCase,
     private val getMovieActorsUseCase: GetMovieActorsUseCase,
     @Assisted private val movieId: Int

@@ -14,7 +14,7 @@ import ru.ermolnik.filmapp.data.local.dao.RemoteKeysDao
 import ru.ermolnik.filmapp.data.local.entity.toData
 import ru.ermolnik.filmapp.data.local.entity.toDomain
 import ru.ermolnik.filmapp.domain.model.Movie
-import ru.ermolnik.filmapp.utils.Resource
+import ru.ermolnik.filmapp.utils.Result
 import ru.ermolnik.filmapp.utils.runOperationCatching
 import javax.inject.Inject
 
@@ -25,7 +25,7 @@ class MoviesLocalDataSource @Inject constructor(
 ) {
 
     @OptIn(ExperimentalPagingApi::class)
-    fun getPopularMoviesPaging(query: String): Resource<Flow<PagingData<Movie>>, Throwable> {
+    fun getPopularMoviesPaging(query: String): Result<Flow<PagingData<Movie>>, Throwable> {
         val pagingSourceFactory = { moviesDao.getMoviesPaging() }
         val paging = Pager(
             config = PagingConfig(
@@ -46,7 +46,7 @@ class MoviesLocalDataSource @Inject constructor(
         return runOperationCatching { paging }
     }
 
-    suspend fun getPopularMoviesLocal(): Resource<List<Movie>, Throwable> {
+    suspend fun getPopularMoviesLocal(): Result<List<Movie>, Throwable> {
         return runOperationCatching {
             moviesDao.getMovies().map { it.toDomain() }
         }

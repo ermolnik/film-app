@@ -6,7 +6,7 @@ import dagger.Component
 import ru.ermolnik.filmapp.MainActivity
 
 @Component(modules = [DataModule::class, DomainModule::class, PresentationModule::class])
-interface AppComponent {
+internal interface AppComponent {
     fun inject(mainActivity: MainActivity)
 
     @Component.Builder

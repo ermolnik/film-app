@@ -1,4 +1,4 @@
-package ru.ermolnik.filmapp.ui.main_components
+package ru.ermolnik.filmapp.shared_ui
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text

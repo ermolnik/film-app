@@ -13,7 +13,7 @@ import ru.ermolnik.filmapp.utils.doOnError
 import ru.ermolnik.filmapp.utils.doOnSuccess
 import javax.inject.Inject
 
-class MainScreenViewModel @Inject constructor(
+internal class MainScreenViewModel @Inject constructor(
     private val getGenreUseCase: GetGenreUseCase,
     private val getPopularMoviesPaging: GetPopularMoviesPaging,
 ) : ViewModel() {

@@ -10,7 +10,7 @@ import ru.ermolnik.filmapp.domain.model.Actor
 import ru.ermolnik.filmapp.domain.model.Genre
 import ru.ermolnik.filmapp.domain.model.Movie
 import ru.ermolnik.filmapp.domain.model.MovieDetails
-import ru.ermolnik.filmapp.utils.Resource
+import ru.ermolnik.filmapp.utils.Result
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(
@@ -18,19 +18,19 @@ class RepositoryImpl @Inject constructor(
     private val local: MoviesLocalDataSource
 ) : Repository {
 
-    override suspend fun getPopularMoviesPaging(query: String): Flow<Resource<Flow<PagingData<Movie>>, Throwable>> {
+    override suspend fun getPopularMoviesPaging(query: String): Flow<Result<Flow<PagingData<Movie>>, Throwable>> {
         return flow {
             emit(local.getPopularMoviesPaging(query))
         }
     }
 
-    override suspend fun getPopularMoviesNetwork(): Flow<Resource<List<Movie>, Throwable>> {
+    override suspend fun getPopularMoviesNetwork(): Flow<Result<List<Movie>, Throwable>> {
         return flow {
             emit(remote.getPopularMoviesNetwork())
         }
     }
 
-    override suspend fun getPopularMoviesLocal(): Flow<Resource<List<Movie>, Throwable>> {
+    override suspend fun getPopularMoviesLocal(): Flow<Result<List<Movie>, Throwable>> {
         return flow {
             emit(local.getPopularMoviesLocal())
         }
@@ -40,25 +40,25 @@ class RepositoryImpl @Inject constructor(
         local.insertMovies(movies)
     }
 
-    override suspend fun searchMovies(query: String): Flow<Resource<List<Movie>, Throwable>> {
+    override suspend fun searchMovies(query: String): Flow<Result<List<Movie>, Throwable>> {
         return flow {
             emit(remote.searchMovies(query))
         }
     }
 
-    override suspend fun getMovieDetails(movieId: Int): Flow<Resource<MovieDetails, Throwable>> {
+    override suspend fun getMovieDetails(movieId: Int): Flow<Result<MovieDetails, Throwable>> {
         return flow {
             emit(remote.getMovieDetails(movieId))
         }
     }
 
-    override suspend fun getMovieActors(movieId: Int): Flow<Resource<List<Actor>, Throwable>> {
+    override suspend fun getMovieActors(movieId: Int): Flow<Result<List<Actor>, Throwable>> {
         return flow {
             emit(remote.getMovieActors(movieId))
         }
     }
 
-    override suspend fun getGenre(): Flow<Resource<List<Genre>, Throwable>> {
+    override suspend fun getGenre(): Flow<Result<List<Genre>, Throwable>> {
         return flow {
             emit(remote.getGenre())
         }
